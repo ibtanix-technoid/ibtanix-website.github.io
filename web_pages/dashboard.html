@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibtanix Technoid - IT & BPO Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Header Styles */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+:root {
+    --primary-color: #6a0dad;
+    --primary-light: #9c27b0;
+    --primary-dark: #4a148c;
+    --secondary-color: #f3e5f5;
+    --text-color: #333;
+    --light-text: #f8f8f8;
+    --gray-bg: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    color: white;
+    padding: 150px 0 100px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background-color: var(--gray-bg);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 40px;
+    padding: 30px;
+    text-align: center;
+}
+
+.service-content {
+    padding: 30px;
+}
+
+.service-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+}
+
+.about-content {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.author-info h4 {
+    color: var(--primary-color);
+}
+
+.author-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-details div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-details i {
+    color: var(--primary-color);
+    margin-right: 15px;
+    font-size: 20px;
+    width: 30px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-dark);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-light);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .about {
+        flex-direction: column;
+    }
+    
+    .about-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .hero h2 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://i.postimg.cc/XNrfYgwB/Chat-GPT-Image-Apr-22-2025-02-06-10-PM-removebg-preview-1.png" alt="Ibtanix Technoid Logo" style="width:22%; height:10%;">
+                    <h1>Ibtanix Technoid</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Get a Quote</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Innovative Solutions for Your Digital Growth</h2>
+            <p>Ibtanix Technoid provides cutting-edge BPO services, IT solutions, and digital marketing strategies to help your business thrive in the digital age.</p>
+            <a href="#services" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer comprehensive solutions tailored to your business needs, helping you achieve digital excellence.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>BPO Services</h3>
+                        <p>Outstanding business process outsourcing solutions including customer support, technical support, back-office operations, and data management services to streamline your business operations.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Web Development</h3>
+                        <p>Custom web development services including responsive websites, e-commerce solutions, web applications, and CMS development to establish your powerful online presence.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Mobile App Development</h3>
+                        <p>Innovative mobile application development for iOS and Android platforms, creating user-friendly and feature-rich apps that drive engagement and business growth.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Marketing</h3>
+                        <p>Comprehensive digital marketing strategies including SEO, social media marketing, PPC advertising, content marketing, and email campaigns to boost your online visibility.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Cloud Solutions</h3>
+                        <p>Scalable cloud computing services including cloud migration, management, and optimization to enhance your business agility and reduce IT costs.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>IT Consulting</h3>
+                        <p>Expert IT consulting services to help you align technology with your business goals, optimize processes, and implement the right solutions for growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Ibtanix Technoid</h2>
+                <p>Founded in 2025, Ibtanix Technoid has grown to become a trusted partner for businesses seeking digital transformation. Our team of experts combines technical expertise with business acumen to deliver solutions that drive results.</p>
+                <p>We pride ourselves on our customer-centric approach, innovative thinking, and commitment to excellence. Whether you're a startup or an established enterprise, we have the tools and expertise to help you succeed in today's competitive digital landscape.</p>
+                <div style="height:30px"></div>
+                <a href="#contact" class="cta-button" style="color : #f8f8f8">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from businesses that have transformed their operations with our services.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Ibtanix Technoid's web development team created an e-commerce platform that increased our online sales by 150% within three months. Their attention to detail and understanding of our business needs was exceptional."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Client">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, Retail Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The BPO services provided by Ibtanix have streamlined our customer support operations while reducing costs by 30%. Their team is professional, responsive, and truly understands our industry."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Client">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Operations Director, TechGlobal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Our mobile app developed by Ibtanix has received rave reviews from users. They delivered on time, within budget, and provided excellent post-launch support. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/50x50" alt="Client">
+                        <div class="author-info">
+                            <h4>David Wilson</h4>
+                            <p>Founder, HealthTrack</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>Ready to discuss your project? Contact us today for a free consultation.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>need to update</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+91 xxxxxxxxx</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>support@ibtanixtechnoid.com</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ibtanix.in?igsh=MTFybGdsYmo1ajl0bA=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form" name="contact-form">
+                    <form id="form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Ibtanix Technoid</h3>
+                    <p>Providing innovative IT solutions and BPO services to help businesses thrive in the digital era.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">BPO Services</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form id="form">
+                        <input type="email" name = "email" placeholder="Your Email" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: none;">
+                        <button type="submit" class="cta-button" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Ibtanix Technoid. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      const form = document.forms['contact-form']
+      form.addEventListener('submit', e => {
+  
+        e.preventDefault()
+  
+        sendData()
+        .then(response => alert("Thank you! Form is submitted" ))
+        .then(() => { window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+      })
+
+      function sendData()
+      {
+        let name = document.getElementById('name')
+        let email = document.getElementById('email')
+        let subject = document.getElementById('subject')
+        let message = document.getElementById('message')
+
+        const sheetName = 'Contact List'
+        const lock = LockService.getScriptLock()
+        lock.tryLock(10000)
+
+        try {
+          const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+          const sheet = doc.getSheetByName(sheetName)
+
+          const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+          const nextRow = sheet.getLastRow() + 1
+
+          const newRow = headers.map(function(header) {
+              switch(header) {
+                case "Date" : return new Date();
+                case "Name" : return name;
+                case "Email" : return email;
+                case "Subject" : return subject;
+                case "Message" : return message;
+              }
+          })
+
+          sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+
+          return ContentService
+            .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+            .setMimeType(ContentService.MimeType.JSON)
+        }
+
+        catch (e) {
+          return ContentService
+            .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+            .setMimeType(ContentService.MimeType.JSON)
+        }
+        finally {
+          lock.releaseLock()
+        }
+      }
+
+        // Simple mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
